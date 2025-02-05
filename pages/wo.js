@@ -79,103 +79,89 @@ export default function Home() {
         </div>
         <button type="submit" className="submit-button">Submit</button>
       </form>
-
+      
       <style jsx>{`
         .container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          height: 100vh;
-          background-color: #f4f7f6;
+          width: 100%;
+          max-width: 800px;
+          margin: 0 auto;
           padding: 20px;
-          perspective: 1000px; /* Adds perspective for 3D effect */
         }
 
         h1 {
-          margin-bottom: 20px;
-          font-size: 2.5rem;
-          color: #333;
           text-align: center;
+          color: #4d1d6b; /* Dark pink */
+          font-size: 2rem;
         }
 
         .form {
-          background: white;
-          padding: 20px;
-          border-radius: 12px;
-          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-          width: 100%;
-          max-width: 400px;
-          transition: transform 0.3s ease, box-shadow 0.4s ease, filter 0.5s ease;
-          transform-style: preserve-3d;
-        }
-
-        .form:hover {
-          transform: rotateY(10deg) rotateX(10deg);
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-          filter: brightness(1.1);
+          background-color: white;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .form-group {
-          margin-bottom: 15px;
+          margin-bottom: 20px;
         }
 
         .form-group label {
           display: block;
+          font-size: 1.1rem;
+          color: #4d1d6b; /* Dark pink */
           margin-bottom: 5px;
-          font-weight: 600;
-          color: #555;
         }
 
         .input-field {
           width: 100%;
-          padding: 12px;
-          margin: 5px 0;
-          border: 1px solid #ddd;
-          border-radius: 10px;
+          padding: 10px;
+          border-radius: 8px;
+          border: 2px solid #4d1d6b; /* Dark pink */
           font-size: 1rem;
-          transition: transform 0.3s ease, border-color 0.3s ease;
+          color: #333;
+          background-color: #f9f9f9;
         }
 
         .input-field:focus {
-          border-color: #0070f3;
           outline: none;
-          transform: scale(1.03);
+          border-color: #d63384; /* Lighter dark pink for focus */
         }
 
         .submit-button {
           width: 100%;
           padding: 12px;
-          background-color: #0070f3;
+          background-color: #4d1d6b; /* Dark pink */
           color: white;
-          font-size: 1.1rem;
+          font-size: 1.2rem;
           border: none;
           border-radius: 8px;
           cursor: pointer;
-          transition: background-color 0.3s ease, transform 0.3s ease;
+          transition: background-color 0.3s ease;
         }
 
         .submit-button:hover {
-          background-color: #005bb5;
-          transform: scale(1.05);
+          background-color: #d63384; /* Lighter dark pink */
         }
 
-        @media (max-width: 600px) {
-          h1 {
-            font-size: 2rem;
-          }
-
-          .form {
-            width: 100%;
+        @media (max-width: 768px) {
+          .container {
             padding: 15px;
           }
 
+          h1 {
+            font-size: 1.5rem;
+          }
+
+          .form {
+            padding: 20px;
+          }
+
           .input-field {
-            padding: 10px;
+            font-size: 0.9rem;
           }
 
           .submit-button {
-            padding: 10px;
+            font-size: 1rem;
           }
         }
       `}</style>

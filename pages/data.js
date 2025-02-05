@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import Image from 'next/image'; // Import the Image component from next/image
 
@@ -25,7 +24,7 @@ export default function DataPage() {
 
   return (
     <div className="data-container">
-      <h1>Fetched Data</h1>
+      <h1>Latest Bollywood</h1>
       
       {/* Search Bar */}
       <input
@@ -45,7 +44,7 @@ export default function DataPage() {
         filteredData.map((item, index) => (
           <div key={index} className="item-card">
             <h2>{item.title}</h2>
-            <h2>{item.news}</h2>
+            <h3>{item.news}</h3>
             <p>{item.description}</p>
             {item.imgUrl && (
               <Image
@@ -61,113 +60,101 @@ export default function DataPage() {
         ))
       )}
 
+      {/* Style Section */}
       <style jsx>{`
         .data-container {
-          font-family: 'Arial', sans-serif;
-          margin: 40px auto;
-          max-width: 1200px;
+          width: 100%;
+          max-width: 900px;
+          margin: 0 auto;
           padding: 20px;
-          background-color: #f9f9f9;
-          text-align: center;
-          animation: fadeIn 1s ease-out;
+          font-family: 'Arial', sans-serif;
         }
 
         h1 {
+          text-align: center;
+          color: #4d1d6b; /* Dark pink */
           font-size: 2.5rem;
-          color: #333;
-          margin-bottom: 40px;
+          margin-bottom: 20px;
         }
 
-        /* Search bar style */
         .search-bar {
-          font-size: 1rem;
-          padding: 10px;
           width: 100%;
-          max-width: 400px;
-          margin: 20px 0;
-          border: 2px solid #007bff;
-          border-radius: 5px;
-          transition: border-color 0.3s ease;
+          padding: 12px;
+          margin-bottom: 20px;
+          border-radius: 8px;
+          border: 2px solid #4d1d6b; /* Dark pink */
+          font-size: 1rem;
+          color: #333;
+          background-color: #fff;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .search-bar:focus {
           outline: none;
-          border-color: #0056b3;
+          border-color: #d63384; /* Lighter pink */
         }
 
-        /* Horizontal line style */
         .horizontal-line {
-          border: 0;
-          height: 1px;
-          background-color: #ddd;
+          border-top: 2px solid #ff99cc; /* Light pink */
           margin: 20px 0;
         }
 
         .item-card {
           background-color: #fff;
-          border-radius: 8px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
           padding: 20px;
           margin-bottom: 20px;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          will-change: transform, box-shadow;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease-in-out;
+          transform: perspective(1000px) rotateX(0);
         }
 
         .item-card:hover {
-          transform: translateY(-10px) rotate(3deg);
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+          transform: perspective(1000px) rotateX(5deg); /* 3D effect on hover */
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .item-card h2 {
+          color: #4d1d6b; /* Dark pink */
           font-size: 1.8rem;
-          color: #007bff;
-          margin-bottom: 15px;
-          transition: color 0.3s ease;
+          margin-bottom: 10px;
+        }
+
+        .item-card h3 {
+          color: #d63384; /* Lighter dark pink for 'news' */
+          font-size: 1.5rem;
+          margin-bottom: 10px;
         }
 
         .item-card p {
-          color: #666;
           font-size: 1rem;
-          line-height: 1.5;
+          color: #555;
         }
 
         .item-image {
-          width: 100%;
-          height: auto;
-          max-width: 250px;
-          border-radius: 8px;
           margin-top: 15px;
-          transition: transform 0.3s ease;
-        }
-
-        .item-image:hover {
-          transform: scale(1.1);
-        }
-
-        @keyframes fadeIn {
-          0% {
-            opacity: 0;
-          }
-          100% {
-            opacity: 1;
-          }
+          border-radius: 8px;
         }
 
         @media (max-width: 768px) {
+          .data-container {
+            padding: 15px;
+          }
+
           h1 {
             font-size: 2rem;
           }
 
-          .item-card {
-            padding: 15px;
+          .search-bar {
+            font-size: 0.9rem;
           }
 
           .item-card h2 {
             font-size: 1.5rem;
           }
 
-          .item-image {
-            max-width: 100%;
+          .item-card h3 {
+            font-size: 1.2rem;
           }
         }
       `}</style>
