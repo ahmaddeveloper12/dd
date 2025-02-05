@@ -7,7 +7,7 @@ export default function Home() {
         <nav>
           <ul>
             <li><a className="one" href="./wo">Form</a></li>
-            <li><a href="./news">Blog</a></li>
+            <li><a href="./data">Blog</a></li>
           </ul>
         </nav>
       </header>
